@@ -1,11 +1,25 @@
-<h1 class="index">Where are you going?</h1>
+<div class="index">
 
-<form id="newtripform">
+  <h2>Where are you going?</h2>
 
-  <input id="textbox" type="text" name="origin" placeholder="Starting Location">
-  <input id="textbox" type="text" name="destination" placeholder="Destination">
-
-  <div class="buttoncontainer">
-    <button type="submit">Vroom</button>
+  <div id="testtrips">
+    <span ng-repeat="trip in vm.trips">
+      <span> | {{trip.origin}} to {{trip.destination}} | </span>
+    </span>
   </div>
-</form>
+  <br>
+  <br>
+  <form id="newtripform" data-ng-submit="vm.create(user)" ng-controller="tripCtrl">
+
+  <input class="textbox" id="originTextbox" type="text" name="origin" placeholder="Starting Location" data-ng-model="user.origin">
+  <input class="textbox" id="destinationTextbox" type="text" name="destination" placeholder="Destination" data-ng-model="user.destination">
+
+  <br>
+  <br>
+    <div class="buttoncontainer">
+      <button type="submit">Vroom</button>
+    </div>
+
+  </form>
+
+</div>
