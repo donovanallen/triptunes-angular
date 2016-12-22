@@ -16,6 +16,7 @@ angular
   .controller("showCtrl", [
     "$scope",
     "TripFactory",
+    "TunesFactory",
     "$state",
     "$stateParams",
     "TripService",
@@ -25,10 +26,26 @@ angular
     "$resource",
     TripFactoryFunction
   ])
+  .factory("TunesFactory",[
+    "$resource",
+    TunesFactoryFunction
+  ])
   .service('TripService', TripServiceCallback)
+  .directive("tunesDirective", function() {
+    return {
+      templateUrl: '/js/ng-views/_tunes.html',
+      replace: true
+    }
+  })
 
   function TripFactoryFunction($resource) {
-    return $resource("https://localhost:4000/api/trip", {}, {
+    return $resource("http://localhost:4000/api/trip", {}, {
+      update: {method: "PUT"}
+    })
+  }
+
+  function TunesFactoryFunction($resource) {
+    return $resource("http://localhost:4000/api/trip/tunes", {}, {
       update: {method: "PUT"}
     })
   }
@@ -80,20 +97,31 @@ angular
         method: "post",
         data: user
       }).then((res) => {
-        $state.go("show", {data: res.data}, {reload: true})
-        TripService.newtrip(res.data)
-        console.log(res.data);
+        var mapdata = res.data
+        $http({
+          url: "http://localhost:4000/api/trip/tunes",
+          method: "post",
+          data: user
+        })
+        $state.go("show", {}, {reload: true})
+        TripService.newtrip(mapdata)
+
       })
     }
-  }
+  };
 
-  function showControllerFunction($scope, TripFactory, $state, $stateParams, TripService) {
+  function showControllerFunction($scope, TripFactory, TunesFactory, $state, $stateParams, TripService) {
     this.trips = tripData
 
     $scope.trip = TripFactory.get();
 
-    this.trip = TripService.getTrip()
-  }
+    this.trip = TripService.getTrip();
+
+    $scope.tunes = TunesFactory.get();
+
+
+
+  };
 
 function TripServiceCallback() {
   var trip = {}

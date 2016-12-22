@@ -18,7 +18,11 @@
 
   <div class="showcontainers" id="spotifycontainer">
     <h3>Your Tunes</h3>
-
+    <tunes-directive></tunes-directive>
+      <button type="button" name="button" >See playlists for {{ vm.trip.destination }}</button>
+      <div data-ng-repeat="tune in vm.tunes">
+        <p>{{tune.name}}</p>
+      </div>
   </div>
 </div>
 
