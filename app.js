@@ -31,12 +31,12 @@ angular
     TunesFactoryFunction
   ])
   .service('TripService', TripServiceCallback)
-  .directive("tunesDirective", function() {
-    return {
-      templateUrl: '/js/ng-views/_tunes.html',
-      replace: true
-    }
-  })
+  // .directive("tunesDirective", function() {
+  //   return {
+  //     templateUrl: '/js/ng-views/_tunes.html',
+  //     replace: true
+  //   }
+  // })
 
   function TripFactoryFunction($resource) {
     return $resource("http://localhost:4000/api/trip", {}, {
@@ -45,9 +45,7 @@ angular
   }
 
   function TunesFactoryFunction($resource) {
-    return $resource("http://localhost:4000/api/trip/tunes", {}, {
-      update: {method: "PUT"}
-    })
+    return $resource("http://localhost:4000/api/trip/tunes")
   }
 
 
@@ -78,8 +76,7 @@ angular
         url: "/trip",
         templateUrl: "js/ng-views/show.html",
         controller: "showCtrl",
-        controllerAs: "vm",
-        data: null
+        controllerAs: "vm"
       })
   }
 
@@ -111,16 +108,13 @@ angular
   };
 
   function showControllerFunction($scope, TripFactory, TunesFactory, $state, $stateParams, TripService) {
-    this.trips = tripData
 
+    // console.log(TripFactory.get());
     $scope.trip = TripFactory.get();
-
     this.trip = TripService.getTrip();
-
-    $scope.tunes = TunesFactory.get();
-
-
-
+    // console.log($scope.trip);
+    this.tunes = TunesFactory.query();
+    // console.log($scope.tunes);
   };
 
 function TripServiceCallback() {
