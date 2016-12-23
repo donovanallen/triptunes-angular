@@ -2,7 +2,9 @@ html{
   width: 100%;
   height: 100%;
   text-align: center;
-  font-family: arial;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-weight: 200;
+  font-size: 1.5em;
   background-image: url(road-bw.jpg);
   background-size: cover;
   display: flex;
@@ -20,38 +22,73 @@ body{
   display: flex;
   flex-direction: column;
   /*border: 1px blue solid;*/
-  vertical-align: middle;
+  /*vertical-align: middle;*/
 }
 
 main{
   /*border: 1px solid green;*/
   /*margin-top: 0;*/
+  height: 100%;
+  /*display: flex;
+  flex-direction: column;*/
+  /*align-items: space-between;*/
+  padding-bottom: 2em;
 }
 
 h1{
   font-family: 'Permanent Marker', cursive;
   /*font-family: 'Permanent Marker', cursive;*/
   font-size: 150px;
-  margin-bottom: 0;
-  /*margin-top: auto;*/
+  margin-bottom: 0px;
+  margin-top: .2em;
 }
 
 h2{
   font-family: 'Oswald', sans-serif;
   font-size: 40px;
+  margin-top: auto;
+}
+
+h3{
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.5em;
+  margin-bottom: auto;
+  border-bottom: 1px solid white;
+  width: 50%;
+}
+
+h4{
+  font-family: 'Oswald', sans-serif;
+  font-size: 1em;
+  margin-bottom: auto;
+  margin-top: .75em;
+}
+
+h5{
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  margin-top: auto;
+  font-weight: 200;
+  font-size: 1em;
+  margin-bottom: .75em;
+}
+
+p{
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-weight: 200;
 }
 
 .index{
   text-align: center;
   vertical-align: middle;
   margin-top: 0px;
+  /*padding-top: 0px;*/
   /*border: blue;*/
   display: flex;
   flex-direction: column;
   /*justify-content: stretch;*/
   /*align-items: space-between;*/
   /*height: 60%;*/
-  align-content: ;
+  /*align-content: ;*/
 }
 
 .index *{
@@ -69,20 +106,32 @@ h2{
 
 .textbox{
   height: auto;
-  width: auto;
+  max-width: 5em;
   text-align: center;
-  font-size: 40px;
+  font-size: 3em;
   background-color: transparent;
   color: darkgray;
   border: none;
+  /*border: 1px solid blue;*/
   font-family: 'Oswald', sans-serif;
 }
 
 .textbox:focus{
   outline: none;
+  border-bottom: 3px solid white;
+}
+
+#origintextbox{
+  margin-right: auto;
+  /*text-align: right;*/
+}
+#destinationtextbox{
+  margin-left: auto;
+  /*text-align: left;*/
 }
 
 form{
+  /*border: 1px solid red;*/
   /*display: flex;
   flex-direction: row;
   align-content: stretch;*/
@@ -100,17 +149,30 @@ button{
   font-size: 20px;
 }
 
+button:hover{
+  background-color: white;
+}
+
 .show{
-  height: 100%;
+  /*height: ;*/
   width: 100%;
   /*border: 2px black solid;*/
   display: flex;
   flex-direction: row;
+  margin-top: auto;
+  padding-top: 0px;
+  border: 1px solid yellow;
 }
 
 .homeButton{
-  margin-top: auto;
-  margin-bottom: 30px;
+  /*margin-top: auto;*/
+  /*margin-bottom: 30px;*/
+  /*position: fixed;*/
+  bottom: auto;
+  /*right: 50%;*/
+  /*margin-left: auto;
+  margin-right: auto;*/
+  /*vertical-align: bottom;*/
 }
 .showcontainers{
   /*border: 5px white solid;*/
@@ -119,6 +181,35 @@ button{
   margin-left: 10px;
   margin-right: 10px;
   padding: 8px;
+  /*margin-top: auto;*/
+  padding-top: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tripendpoints{
+  display: flex;
+  flex-direction: row;
+  min-width: 50%;
+  max-width: 100%;
+  justify-content: space-between;
+  /*text-align: center;*/
+  /*align-content: */
+  /*border: 1px solid red;*/
+}
+
+.tripEndpointTitles{
+  font-weight: 700;
+  font-size: .75em;
+}
+
+.triporigin{
+  text-align: left;
+}
+
+.tripdest{
+  text-align: right;
 }
 
 /*.spotifycontainer{

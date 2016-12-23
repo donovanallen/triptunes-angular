@@ -2,17 +2,21 @@
   <div class="showcontainers" id="tripcontainer">
     <h3>Your Trip</h3>
       <div class="tripendpoints" ng-controller="tripCtrl">
-        <span>Origin: {{vm.trip.origin}}</span>
-        <span>Destination: {{vm.trip.destination}}</span>
+        <div class="triporigin">
+          <span class="tripEndpointTitles">Origin</span><br>
+          <span>{{vm.trip.origin}}</span>
+        </div>
+        <div class="tripdest">
+          <span class="tripEndpointTitles">Destination</span><br>
+          <span>{{vm.trip.destination}}</span>
+        </div>
       </div>
 
-      <h4>Approximate Trip Time:</h4>
+      <h4>Approximate Trip Time</h4>
       <h5>{{vm.trip.duration_text}}</h5>
       <h4>Trip Distance</h4>
       <h5>{{vm.trip.distance_text}}</h5>
-      <br>
       <!-- put map image here? -->
-      <br>
       <button type="button" name="button">Review Your Route</button>
   </div>
 
