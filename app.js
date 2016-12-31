@@ -99,9 +99,13 @@ angular
           url: "http://localhost:4000/api/trip/tunes",
           method: "post",
           data: user
+        }).then((spres) => {
+          var list = spres.data
+          console.log(list);
+          $state.go("show", {}, {reload: true})
+          TripService.newtrip(mapdata)
+          TripService.newlist(list)
         })
-        $state.go("show", {}, {reload: true})
-        TripService.newtrip(mapdata)
 
       })
     }
@@ -110,18 +114,28 @@ angular
   function showControllerFunction($scope, TripFactory, TunesFactory, $state, $stateParams, TripService) {
 
     // console.log(TripFactory.get());
-    $scope.trip = TripFactory.get();
+    // $scope.trip = TripFactory.get();
     this.trip = TripService.getTrip();
     // console.log($scope.trip);
-    this.tunes = TunesFactory.query();
+    // this.tunes = TunesFactory.get();
     // console.log($scope.tunes);
+    this.playlists = TripService.getList()
+    // console.log(this.playlists);
   };
 
 function TripServiceCallback() {
   var trip = {}
+  var playlists = []
 
+  var newlist = function(spdata) {
+    playlists = spdata
+  }
   var newtrip = function(data) {
     trip = data
+  }
+
+  var getList = function() {
+    return playlists
   }
 
   var getTrip = function() {
@@ -130,6 +144,8 @@ function TripServiceCallback() {
 
   return {
     newtrip,
-    getTrip
+    getTrip,
+    newlist,
+    getList
   }
 };

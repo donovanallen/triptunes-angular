@@ -7,6 +7,7 @@ html{
   font-size: 1.5em;
   background-image: url(road-bw.jpg);
   background-size: cover;
+  background-repeat: no-repeat;
   display: flex;
   justify-content: center;
   /*align-: center;*/
@@ -155,29 +156,33 @@ button:hover{
 
 .show{
   /*height: ;*/
+  max-height: 100%;
   width: 100%;
   /*border: 2px black solid;*/
   display: flex;
   flex-direction: row;
   margin-top: auto;
   padding-top: 0px;
-  border: 1px solid yellow;
+  /*border: 1px solid yellow;*/
 }
 
 .homeButton{
   /*margin-top: auto;*/
   /*margin-bottom: 30px;*/
   /*position: fixed;*/
-  bottom: auto;
+  /*bottom: auto;*/
   /*right: 50%;*/
   /*margin-left: auto;
   margin-right: auto;*/
   /*vertical-align: bottom;*/
 }
-.showcontainers{
+
+#tripcontainer{
   /*border: 5px white solid;*/
   width: 50%;
-  height: auto;
+  /*height: auto;*/
+  /*max-height: 50%;*/
+  /*overflow-y: scroll;*/
   margin-left: 10px;
   margin-right: 10px;
   padding: 8px;
@@ -186,6 +191,43 @@ button:hover{
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+#tunescontainer{
+  /*border: 5px white solid;*/
+  width: 50%;
+  max-height: 50%;
+  /*max-height: 50%;*/
+  overflow-y: scroll;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 8px;
+  /*margin-top: auto;*/
+  /*padding-top: 0px;*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+ul{
+  list-style: none;
+  margin-top: 1px;
+  margin-bottom: 1px;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+  height: auto;
+  overflow-y: scroll;
+
+}
+
+#list{
+  /*max-height: 50%;*/
+  /*margin-top: 0px;*/
+  height: 400px;
+  overflow: scroll;
 }
 
 .tripendpoints{
@@ -211,16 +253,3 @@ button:hover{
 .tripdest{
   text-align: right;
 }
-
-/*.spotifycontainer{
-  border: 5px white solid;
-  width: 50%;
-  margin-left: 10px;
-  margin-right: 10px;
-}
-.tripcontainer{
-  border: 5px white solid;
-  width: 50%;
-  margin-left: 10px;
-  margin-right: 10px;
-}*/

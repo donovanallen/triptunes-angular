@@ -16,18 +16,25 @@
       <h5>{{vm.trip.duration_text}}</h5>
       <h4>Trip Distance</h4>
       <h5>{{vm.trip.distance_text}}</h5>
-      <!-- put map image here? -->
+      <!-- <div class="mapembed">
+        <iframe
+          width="450"
+          height="250"
+          frameborder="0" style="border:0"
+          ng-src="https://www.google.com/maps/embed/v1/embed?key=AIzaSyDUfo2Qpzsz-Q6uqYQjdNvRg5HBbj5Hwn8&origin=boston&destination=dc&output=embed" allowfullscreen>
+        </iframe>
+      </div> -->
       <button type="button" name="button">Review Your Route</button>
   </div>
 
-  <div class="showcontainers" id="spotifycontainer">
+  <div class="showcontainers" id="tunescontainer">
     <h3>Your Tunes</h3>
-    <!-- <tunes-directive></tunes-directive> -->
-      <!-- <button type="button" name="button" >See playlists for {{ vm.trip.destination }}</button> -->
-      <div data-ng-repeat="tune in vm.tunes">
-        <p>{{tune.name}}</p>
+    <div id="list">
+        <div class="playlists" data-ng-repeat="playlist in vm.playlists">
+          <a href="{{playlist.external_urls.spotify}}">{{playlist.name}} - {{playlist.tracks.total}} tracks</a>
+        </div>
       </div>
   </div>
 </div>
 
-<button class="homeButton" type="button" name="button">Home</button>
+<button data-ui-sref="index" class="homeButton" type="button" name="button">Home</button>

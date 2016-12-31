@@ -1,11 +1,14 @@
 <div class="index">
 
-  <h2>Where are you going?</h2>
+  <h2>The right music for your road trip.</h2>
 
   <div id="testtrips">
-    <span ng-repeat="trip in vm.trips">
+    <!-- <span ng-repeat="trip in vm.trips">
       <span> | {{trip.origin}} to {{trip.destination}} | </span>
-    </span>
+    </span> -->
+    <!-- <p>
+      Where are you going?
+    </p> -->
   </div>
   <br>
   <form id="newtripform" data-ng-submit="vm.create(user)" ng-controller="tripCtrl">
