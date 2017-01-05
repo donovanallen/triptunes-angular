@@ -68,13 +68,13 @@ angular
     $stateProvider
       .state("index", {
         url: "/",
-        templateUrl: "js/ng-views/index.html",
+        templateUrl: "triptunes-angular/js/ng-views/index.html",
         controller: "tripCtrl",
         controllerAs: "vm"
       })
       .state("show", {
         url: "/trip",
-        templateUrl: "js/ng-views/show.html",
+        templateUrl: "triptunes-angular/js/ng-views/show.html",
         controller: "showCtrl",
         controllerAs: "vm"
       })
