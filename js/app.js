@@ -39,13 +39,13 @@ angular
   // })
 
   function TripFactoryFunction($resource) {
-    return $resource("http://localhost:4000/api/trip", {}, {
+    return $resource("https://still-mountain-36707.herokuapp.com/api/trip", {}, {
       update: {method: "PUT"}
     })
   }
 
   function TunesFactoryFunction($resource) {
-    return $resource("http://localhost:4000/api/trip/tunes")
+    return $resource("https://still-mountain-36707.herokuapp.com/api/trip/tunes")
   }
 
 
@@ -90,13 +90,13 @@ angular
 
     this.create = function(user) {
       $http({
-        url: "http://localhost:4000/api/trip",
+        url: "https://still-mountain-36707.herokuapp.com/api/trip",
         method: "post",
         data: user
       }).then((res) => {
         var mapdata = res.data
         $http({
-          url: "http://localhost:4000/api/trip/tunes",
+          url: "https://still-mountain-36707.herokuapp.com/api/trip/tunes",
           method: "post",
           data: user
         }).then((spres) => {
