@@ -5,9 +5,9 @@ html{
   font-family: 'Yanone Kaffeesatz', sans-serif;
   font-weight: 200;
   font-size: 1.5em;
-  background-image: url(road-bw.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
+  /*background-image: url(road-bw.jpg);
+  background-size: cover;*/
+  /*background-repeat: no-repeat;*/
   display: flex;
   justify-content: center;
   /*align-: center;*/
@@ -27,13 +27,14 @@ body{
 }
 
 main{
-  /*border: 1px solid green;*/
+  /*border: 1px blue solid;*/
+  border: 1px solid green;
   /*margin-top: 0;*/
-  height: 100%;
+  height: auto;
   /*display: flex;
   flex-direction: column;*/
   /*align-items: space-between;*/
-  padding-bottom: 2em;
+  /*padding-bottom: 2em;*/
 }
 
 h1{
@@ -42,6 +43,11 @@ h1{
   font-size: 150px;
   margin-bottom: 0px;
   margin-top: .2em;
+  position: relative;
+  text-align: center;
+  background-color: transparent;
+  z-index: 100;
+  /*border: 1px solide red;*/
 }
 
 h2{
@@ -90,6 +96,8 @@ p{
   /*align-items: space-between;*/
   /*height: 60%;*/
   /*align-content: ;*/
+  position: relative;
+  z-index: 100;
 }
 
 .index *{
@@ -164,6 +172,8 @@ button:hover{
   margin-top: auto;
   padding-top: 0px;
   /*border: 1px solid yellow;*/
+  position: absolute;
+  z-index: 100;
 }
 
 .homeButton{
@@ -270,13 +280,14 @@ a{
     display: block !important;
 }
 .video-container {
-    position: relative;
+    position: absolute;
     bottom: 0%;
     left: 0%;
     height: 100%;
     width: 100%;
+    /*border: 1px solid red;*/
     overflow: hidden;
-    background: #000;
+    /*background: #000;*/
 }
 .video-container .poster img {
     width: 100%;
@@ -284,15 +295,16 @@ a{
     position: absolute;
 }
 .video-container .filter {
-    z-index: 100;
+    /*z-index: 100;*/
     position: absolute;
     background: rgba(0, 0, 0, 0.4);
     width: 100%;
 }
 .video-container video {
-    position: absolute;
+    /*position: absolute;*/
     z-index: 0;
     bottom: 0;
+    /*border: 1px solid red;*/
 }
 .video-container video.fillWidth {
     width: 100%;
