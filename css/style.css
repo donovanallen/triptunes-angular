@@ -74,14 +74,16 @@ h4{
   font-size: 1em;
   margin-bottom: 0;
   margin-top: .75em;
+  border: 1px solid red;
 }
 
 h5{
   font-family: 'Oswald', sans-serif;
   margin-top: auto;
   font-weight: 200;
-  font-size: 1em;
+  font-size: 1.2em;
   margin-bottom: .75em;
+  border: 1px solid green;
 }
 
 p{
