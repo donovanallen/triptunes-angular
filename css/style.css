@@ -258,11 +258,13 @@ a{
   /*text-align: center;*/
   /*align-content: */
   /*border: 1px solid red;*/
+
 }
 
 .tripEndpointTitles{
-  font-weight: 700;
+  /*font-weight: 700;*/
   font-size: .75em;
+  font-family: 'Oswald', sans-serif;
 }
 
 .triporigin{
