@@ -24,15 +24,15 @@
           ng-src="https://www.google.com/maps/embed/v1/embed?key=AIzaSyDUfo2Qpzsz-Q6uqYQjdNvRg5HBbj5Hwn8&origin=boston&destination=dc&output=embed" allowfullscreen>
         </iframe>
       </div> -->
-      <input type="button" name="button" href="https://www.google.com/maps/dir/Washington,+District+of+Columbia/New+York/@39.8314317,-76.638872,8z/am=t/data=!4m14!4m13!1m5!1m1!1s0x89b7c6de5af6e45b:0xc2524522d4885d2a!2m2!1d-77.0368707!2d38.9071923!1m5!1m1!1s0x89c24fa5d33f083b:0xc80b8f06e177fe62!2m2!1d-74.0059413!2d40.7127837!5i1" >Review Your Route</input>
+      <!-- <input type="button" name="button" href="https://www.google.com/maps/dir/Washington,+District+of+Columbia/New+York/@39.8314317,-76.638872,8z/am=t/data=!4m14!4m13!1m5!1m1!1s0x89b7c6de5af6e45b:0xc2524522d4885d2a!2m2!1d-77.0368707!2d38.9071923!1m5!1m1!1s0x89c24fa5d33f083b:0xc80b8f06e177fe62!2m2!1d-74.0059413!2d40.7127837!5i1" >Review Your Route</input> -->
   </div>
 
   <div class="showcontainers" id="tunescontainer">
     <h3>Your Tunes</h3>
-    <select>
+    <!-- <select>
       <option value="">{{vm.trip.origin}}</option>
       <option value="">{{vm.trip.destination}}</option>
-    </select>
+    </select> -->
     <div id="list">
         <div class="playlists" data-ng-repeat="playlist in vm.playlists">
           <a href="{{playlist.external_urls.spotify}}">{{playlist.name}} - {{playlist.tracks.total}} tracks</a>
